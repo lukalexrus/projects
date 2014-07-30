@@ -1,0 +1,84 @@
+package Test;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Progamm {
+
+	
+	private static void formKeyPressed(java.awt.event.KeyEvent evt) {                                
+        switch (evt.getKeyCode()) {
+ 
+            case KeyEvent.VK_BACK_SPACE:
+                break;
+ 
+            case KeyEvent.VK_ENTER: //Нажата клавиша Enter
+                break;
+ 
+            default:
+        }
+    } 
+	
+	
+	public static void menu() throws IOException
+	{
+	   char check;// переменная для ответа.
+	   
+	    System.out.println("МЕНЮ");
+		System.out.println("1.Embeded class");
+		System.out.println("2.track time");
+	   
+	   while(true){
+		 addKeyListener(new KeyAdapter() {
+	            @Override
+	            public void keyPressed(KeyEvent evt) {
+	            	switch (evt.getKeyCode()) {
+	       		 
+	                case KeyEvent.VK_LEFT:
+	                	System.out.println("Влево");
+	                    break;
+
+	                case KeyEvent.VK_ENTER: //Нажата клавиша Enter
+	                    System.out.println("Enter");
+	                	break;
+
+	                default:	 
+	                	
+	                }
+	            }
+	        });
+	   
+	   
+	   }
+    
+		
+		/*
+		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+		String str=input.readLine();        
+		System.out.println(str);
+		*/
+		
+	}
+	
+	
+	
+	
+	
+	
+	private static void addKeyListener(KeyAdapter keyAdapter) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	public static void main(String[] args) throws IOException
+	{
+		menu();
+	}
+	
+	
+}

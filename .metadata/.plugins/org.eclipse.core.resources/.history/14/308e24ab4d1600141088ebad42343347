@@ -1,0 +1,66 @@
+package Test;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Progamm {
+
+	
+	private static void formKeyPressed(java.awt.event.KeyEvent evt) {                                
+        switch (evt.getKeyCode()) {
+ 
+            case KeyEvent.VK_BACK_SPACE:
+                break;
+ 
+            case KeyEvent.VK_ENTER: //Нажата клавиша Enter
+                break;
+ 
+            default:
+        }
+    } 
+	
+	
+	public static void menu() throws IOException
+	{
+	   char check;// переменная для ответа.
+	   
+	    System.out.println("МЕНЮ");
+		System.out.println("1.Embeded class");
+		System.out.println("2.Track time");
+		System.out.println("3.Exit");
+	   
+	   while(true){
+		   Scanner sc = new Scanner(System.in);
+	       Pattern p = Pattern.compile("^[w,a,s,d]");
+	       if (sc.hasNext(p)) {
+	    	   System.out.println("YRAAAAAA!!!1");
+	           
+	       }
+	   
+	   
+	   }
+    
+		
+		/*
+		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+		String str=input.readLine();        
+		System.out.println(str);
+		*/
+		
+	}
+
+
+
+
+	public static void main(String[] args) throws IOException
+	{
+		menu();
+	}
+	
+	
+}

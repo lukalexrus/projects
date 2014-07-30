@@ -1,0 +1,98 @@
+package creepingLine;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JScrollBar;
+import javax.swing.JSlider;
+import javax.swing.JLabel;
+
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.util.Arrays;
+
+public class creepingLine {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	String s="        ";
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					creepingLine window = new creepingLine();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public creepingLine() {
+		initialize();
+	}
+
+	private String funct(String a)
+	{
+		String []arr={"aaaa","bbb"};
+		//arr=a.split("");
+		//arr[0]="R";
+		String b=arr.toString();
+		
+		return b;
+	}
+	
+	
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 556, 331);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton btnNewButton = new JButton("\u0417\u0430\u043F\u0443\u0441\u043A");
+		
+		btnNewButton.setBounds(335, 31, 89, 23);
+		frame.getContentPane().add(btnNewButton);
+		
+		textField = new JTextField();
+		textField.setBounds(47, 32, 230, 20);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JSlider slider = new JSlider();
+		slider.setBounds(47, 81, 230, 26);
+		frame.getContentPane().add(slider);
+		
+		JLabel label = new JLabel("");
+		label.setFont(new Font("Tahoma", Font.BOLD, 86));
+		label.setBounds(10, 118, 520, 163);
+		frame.getContentPane().add(label);
+		
+		// функции обработчики
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String a=textField.getText();	
+				String[] arr=new String[a.length()];
+			    arr=a.split(" ");
+				arr[0]="";
+				String b=Arrays.toString(arr);
+				label.setText(b);				
+			}
+		});
+	}
+}
